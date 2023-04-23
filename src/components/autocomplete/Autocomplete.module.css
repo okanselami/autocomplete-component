@@ -1,0 +1,80 @@
+:root {
+  --autocomplete-bg-color: #fff;
+  --autocomplete-border-color: #ccc;
+  --autocomplete-border-radius: 4px;
+  --autocomplete-font-size: 16px;
+  --autocomplete-label-font-size: 10px;
+  --autocomplete-input-padding: 8px;
+  --autocomplete-suggestion-bg-color: #fff;
+  --autocomplete-suggestion-border-color: #ccc;
+  --autocomplete-suggestion-color: #333;
+  --autocomplete-suggestion-hover-bg-color: #f2f2f2;
+  --autocomplete-suggestion-selected-bg-color: #007bff;
+  --autocomplete-suggestion-error-color: #f00;
+  --autocomplete-suggestion-selected-color: #fff;
+}
+
+.autocomplete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.autocomplete__input {
+  width: calc(100% - 2 * var(--autocomplete-input-padding));
+  padding: var(--autocomplete-input-padding);
+  font-size: var(--autocomplete-font-size);
+  border: 1px solid var(--autocomplete-border-color);
+  border-radius: var(--autocomplete-border-radius);
+  background-color: var(--autocomplete-bg-color);
+}
+
+.autocomplete__input--error {
+  border: 2px solid var(--autocomplete-suggestion-error-color);
+}
+
+.autocomplete__input_append {
+  position: absolute;
+  padding: var(--autocomplete-input-padding);
+  right: 0;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.autocomplete__suggestions {
+  border: 1px solid var(--autocomplete-suggestion-border-color);
+  border-top: none;
+  border-radius: var(--autocomplete-border-radius);
+  background-color: var(--autocomplete-suggestion-bg-color);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.autocomplete__suggestion {
+  padding: 8px;
+  font-weight: 400;
+  color: var(--autocomplete-suggestion-color);
+  cursor: pointer;
+}
+
+.autocomplete__suggestion:hover {
+  background-color: var(--autocomplete-suggestion-hover-bg-color);
+}
+
+.autocomplete__suggestion--active {
+  background-color: var(--autocomplete-suggestion-hover-bg-color);
+}
+
+.autocomplete__suggestion--selected {
+  background-color: var(--autocomplete-suggestion-selected-bg-color);
+  color: var(--autocomplete-suggestion-selected-color);
+}
+
+.autocomplete__suggestion--selected:hover {
+  background-color: var(--autocomplete-suggestion-selected-bg-color);
+  color: var(--autocomplete-suggestion-selected-color);
+}
